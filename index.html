@@ -24,7 +24,6 @@
           <h1 id="brand-title" class="brand__title">
             <img class="brand__logo" src="assets/logo.png" alt="Stivalita" />
           </h1>
-          <p class="brand__country">Italy</p>
         </div>
 
         <div class="divider" aria-hidden="true"></div>
@@ -63,14 +62,21 @@
           </a>
         </nav>
 
-        <a class="email" href="mailto:Stivalita@mail.ru">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="5" width="18" height="14" rx="2" />
-            <path d="m4 7 8 6 8-6" />
-          </svg>
+        <button class="email" type="button" data-email="Stivalita@mail.ru" data-tooltip="скопировать">
           <span>Stivalita@mail.ru</span>
-        </a>
+        </button>
       </section>
     </main>
+    <script>
+      const emailButton = document.querySelector(".email");
+
+      emailButton.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(emailButton.dataset.email);
+        emailButton.dataset.tooltip = "скопировано";
+        window.setTimeout(() => {
+          emailButton.dataset.tooltip = "скопировать";
+        }, 1200);
+      });
+    </script>
   </body>
 </html>
