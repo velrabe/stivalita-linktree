@@ -12,7 +12,7 @@
 
 html {
   min-height: 100%;
-  background: #e6ddd2 url("assets/background.png") center / cover no-repeat fixed;
+  background: #fff;
 }
 
 body {
@@ -34,6 +34,7 @@ a {
   min-height: 100vh;
   margin: 0 auto;
   align-items: center;
+  background: #e6ddd2 url("assets/background.png") center / cover no-repeat;
   justify-content: center;
   padding: 46px 18px 38px;
 }
@@ -52,23 +53,16 @@ a {
   text-align: center;
 }
 
-.brand__name {
+.brand__title {
   margin: 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(58px, 15vw, 94px);
-  font-weight: 500;
-  line-height: 0.9;
+  line-height: 1;
 }
 
-.brand__flag {
-  display: inline-block;
-  width: 0.19em;
-  height: 0.31em;
-  margin: 0 0.015em 0 0.02em;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #078a3f 0 33%, #fff 33% 66%, #df312d 66%);
-  transform: translateY(-0.16em);
-  vertical-align: middle;
+.brand__logo {
+  display: block;
+  max-width: 100%;
+  max-height: 80px;
+  margin: 0 auto;
 }
 
 .brand__country {
@@ -89,7 +83,7 @@ a {
 .tagline {
   margin: 0;
   color: var(--muted);
-  font-size: clamp(21px, 5vw, 29px);
+  font-size: 1.5rem;
   font-weight: 400;
   line-height: 1.52;
   text-align: center;
@@ -112,41 +106,7 @@ a {
   background: var(--card);
   box-shadow: var(--shadow);
   column-gap: 14px;
-  grid-template-columns: 62px 1fr 38px;
-}
-
-.link-card__icon,
-.link-card__arrow {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-.link-card__icon svg {
-  width: 39px;
-  height: 39px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.65;
-}
-
-.link-card__icon--wb {
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  background: #050505;
-  color: #fff;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.link-card__icon--ozon {
-  font-size: 23px;
-  font-weight: 700;
-  letter-spacing: 0;
+  grid-template-columns: 1fr 38px;
 }
 
 .link-card__label {
@@ -157,7 +117,10 @@ a {
 }
 
 .link-card__arrow {
+  display: grid;
+  align-items: center;
   justify-self: end;
+  justify-items: center;
 }
 
 .link-card__arrow svg {
@@ -197,12 +160,8 @@ a {
     padding-left: 14px;
   }
 
-  .brand__name {
-    font-size: 52px;
-  }
-
   .link-card {
-    grid-template-columns: 52px 1fr 32px;
+    grid-template-columns: 1fr 32px;
     padding: 0 18px;
   }
 
